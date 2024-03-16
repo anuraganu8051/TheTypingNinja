@@ -1,0 +1,27 @@
+.typingArea_container {
+  margin: 10px auto;
+  height: 240px;
+  width: 918px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: aqua;
+  border: 3px solid #000;
+}
+
+.typingArea_container button.Space {
+  width: 90px;
+}
+
+.typingArea_container .row-0,
+.typingArea_container .row-1 {
+  display: inline-block;
+  margin: 30px;
+  /* border: 2px solid red; */
+}
+
+.typingArea_container .row-2,
+.typingArea_container .row-3 {
+  display: inline-block;
+  margin: 30px;
+  /* border: 2px solid greenyellow; */
+}

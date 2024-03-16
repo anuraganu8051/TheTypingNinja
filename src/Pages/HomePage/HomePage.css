@@ -1,0 +1,11 @@
+.home_page {
+  margin-top: 150px;
+  display: inline-block;
+  width: 800px;
+  border: 2px solid rgb(2, 2, 37);
+}
+
+.home_page p {
+  padding: 5px;
+  /* font-size: 17px; */
+}

@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+
+import { useState } from "react";
+import TypingArea from "./Components/TypingArea/TypingArea";
+import Keyboard from "./Components/KeyBoard/KeyBoard";
+import Sidebar from "./Components/Sidebar/Sidebar";
+import HomePage from "./Pages/HomePage/HomePage";
+import ExercisePage from "./Pages/ExercisePage/ExercisePage";
+import "./App.css";
 
 function App() {
+  const [homePage, setHomePage] = useState(true);
+  const [showKeyBoard, setShowKeyBoard] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Sidebar pageName={setHomePage} keyboard={setShowKeyBoard} />
+      {!showKeyBoard && <div>{homePage ? <ExercisePage /> : <HomePage />}</div>}
+
+      {showKeyBoard && (
+        <div>
+          <TypingArea />
+          <Keyboard />
+        </div>
+      )}
     </div>
   );
 }

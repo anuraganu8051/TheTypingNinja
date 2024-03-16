@@ -1,0 +1,56 @@
+.keyboard_container {
+  margin: auto;
+  height: auto;
+  width: fit-content;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #030637;
+}
+
+button {
+  margin: 1px;
+  height: 45px;
+  width: 60px;
+  font-size: large;
+  background-color: #3c0753;
+  color: #fff;
+  border-radius: 5px;
+  border: 2px solid rgb(8, 86, 112);
+}
+
+.keyboard_container button[row="row-0"] {
+  width: 59px;
+}
+
+.keyboard_container button.Tab,
+.keyboard_container button.\\ {
+  width: 83px;
+}
+
+.keyboard_container button.Back {
+  width: 120px;
+}
+
+.keyboard_container button.Caps {
+  width: 100px;
+}
+
+.keyboard_container button.Enter {
+  width: 130px;
+}
+
+.keyboard_container button.Shift {
+  width: 145px;
+}
+
+.keyboard_container button.Alt {
+  width: 80px;
+}
+
+.keyboard_container button.Ctrl {
+  width: 95px;
+}
+
+.keyboard_container button.Space {
+  width: 430px;
+}
