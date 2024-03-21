@@ -1,0 +1,27 @@
+.info_container {
+  /* color: rgb(41, 66, 85); */
+  color: aliceblue;
+}
+.info_container div {
+  display: inline-block;
+}
+
+.info_container .play_icon {
+  margin-left: -250px;
+  padding: 1px;
+  font-size: 38px;
+  display: inline-block;
+}
+
+.info_container .pause_icon {
+  margin-left: -250px;
+  padding: 1px;
+  font-size: 38px;
+  display: inline-block;
+}
+.info_container .clock_counter {
+  margin: 0;
+  padding: 1px;
+  display: inline-block;
+  font-size: 38px;
+}

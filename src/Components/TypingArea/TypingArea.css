@@ -1,5 +1,5 @@
 .typingArea_container {
-  margin: 10px auto;
+  margin: 0px auto;
   height: 240px;
   width: 918px;
   padding: 15px;
@@ -7,10 +7,20 @@
   background-color: aqua;
   border: 3px solid #000;
 }
-
-.typingArea_container button.Space {
-  width: 90px;
+.typingArea_container button {
+  padding: 14px;
+  margin: 1px;
+  /* height: 45px; */
+  /* width: 60px; */
+  font-size: 15px;
+  background-color: #3c0753;
+  color: #fff;
+  border-radius: 5px;
+  border: 2px solid rgb(8, 86, 112);
 }
+/* .typingArea_container button.Space {
+  width: 90px; 
+} */
 
 .typingArea_container .row-0,
 .typingArea_container .row-1 {
@@ -24,4 +34,9 @@
   display: inline-block;
   margin: 30px;
   /* border: 2px solid greenyellow; */
+}
+
+.typingArea_container button:disabled {
+  background-color: #be8ad4;
+  border: 2px solid rgb(8, 86, 112);
 }

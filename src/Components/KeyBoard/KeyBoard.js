@@ -1,8 +1,36 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
 import "./KeyBoard.css";
 
 const Keyboard = () => {
+  const [activeItem, setActiveItem] = useState(undefined);
+  const functionalKey = [
+    "CapsLock",
+    "Shift",
+    "Tab",
+    "Control",
+    "Alt",
+    "Enter",
+    "Backspace",
+  ];
+  let keyDownFlag = false;
+  const handleKeyDown = (index) => {
+    if (!keyDownFlag) {
+      keyDownFlag = false;
+      console.log("index key board =>", index);
+      setActiveItem(index);
+      console.log("activeItem =>", activeItem);
+      // setTimeout(function () {
+      //   keyDownFlag = false;
+      // }, 500);
+    }
+  };
+  const handleKeyUp = (index) => {
+    // console.log("index key board =>", index);
+    keyDownFlag = false;
+    setActiveItem(undefined);
+  };
   const keyboardLayout = [
     [
       "` ~",
@@ -18,7 +46,7 @@ const Keyboard = () => {
       "0 )",
       "- _",
       "= +",
-      "Back",
+      "Backspace",
     ],
     [
       "Tab",
@@ -37,7 +65,7 @@ const Keyboard = () => {
       "\\ |",
     ],
     [
-      "Caps",
+      "CapsLock",
       "A",
       "S",
       "D",
@@ -52,7 +80,7 @@ const Keyboard = () => {
       "Enter",
     ],
     ["Shift", "Z", "X", "C", "V", "B", "N", "M", ", <", ". >", "/ ?", "Shift"],
-    ["Ctrl", "Win", "Alt", "Space", "Alt", "Win", "Ctrl"],
+    ["Control", "Win", "Alt", "Space", "Alt", "Win", "Control"],
   ];
 
   const lowercaseAlphabetKeys = [
@@ -63,23 +91,56 @@ const Keyboard = () => {
     ["Ctrl", "Win", "Alt", "Space", "Alt", "Win", "Ctrl"],
   ];
 
+  useEffect(() => {
+    document.addEventListener("keydown", (event) => {
+      if (functionalKey.indexOf(event.key) === -1) {
+        handleKeyDown(event.key.toUpperCase());
+      } else {
+        handleKeyDown(event.key);
+      }
+    });
+
+    document.addEventListener("keyup", (event) => {
+      if (functionalKey.indexOf(event.key) === -1) {
+        handleKeyUp(event.key.toUpperCase());
+      } else {
+        handleKeyUp(event.key);
+      }
+    });
+  }, []);
+
   return (
     <div className="keyboard_container">
       {keyboardLayout.map((row, rowIndex) => (
         <div key={rowIndex}>
-          {row.map((item) => (
-            <button key={item} className={item} row={`row-${rowIndex}`}>
-              {item.indexOf(" ") == 1 ? (
-                <div>
-                  <sub>{item.split(" ")[0]}</sub>{" "}
-                  <sup>{item.split(" ")[1]}</sup>
-                </div>
-              ) : (
-                item
-              )}
-              {/* {item} */}
-            </button>
-          ))}
+          {row.map((item, index) => {
+            return (
+              <button
+                key={item + index}
+                className={
+                  item.indexOf(activeItem?.replace(" ", "")) !== -1 &&
+                  (item.length === activeItem?.length ||
+                    item.replace(" ", "").length === 2)
+                    ? item + " active"
+                    : item
+                }
+                row={`row-${rowIndex}`}
+                name={item}
+                index={index}
+              >
+                {/* {console.log("item class => ", `${item + " active"}`)} */}
+                {item.indexOf(" ") == 1 ? (
+                  <div>
+                    <sub>{item.split(" ")[0]}</sub>{" "}
+                    <sup>{item.split(" ")[1]}</sup>
+                  </div>
+                ) : (
+                  item
+                )}
+                {/* {item} */}
+              </button>
+            );
+          })}
         </div>
       ))}
     </div>

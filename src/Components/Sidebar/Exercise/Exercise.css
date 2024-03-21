@@ -5,6 +5,7 @@
   padding: 0;
 }
 .sidebar_exercise_container .back_button {
+  padding: 5px;
   text-align: left;
   color: white;
 }
@@ -24,6 +25,7 @@
   background-color: rgb(14, 11, 11);
   color: rgb(14, 165, 135);
 }
+
 .sidebar_exercise_container ul li.header:hover {
   background-color: rgb(14, 11, 11);
   color: rgb(14, 165, 135);
@@ -32,4 +34,9 @@
 .sidebar_exercise_container ul li:hover {
   background-color: rgb(39, 35, 35);
   color: white;
+}
+
+.sidebar_exercise_container li.active {
+  background-color: rgb(78, 5, 5);
+  color: rgb(14, 100, 165);
 }

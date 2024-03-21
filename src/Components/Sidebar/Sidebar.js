@@ -17,7 +17,7 @@ const Sidebar = (props) => {
     "Top Row",
     "Home and Top Row",
     "Bottom Row",
-    "Home, Top and Bottom Row",
+    "Home Top and Bottom Row",
     "Number Row",
     "All Row",
   ];
@@ -27,6 +27,7 @@ const Sidebar = (props) => {
       chapter={header}
       showExeciseSideBar={setShowExecise}
       keyboard={props.keyboard}
+      exercise={props.exercise}
     />
   ) : (
     <div className="sidebar_container">
