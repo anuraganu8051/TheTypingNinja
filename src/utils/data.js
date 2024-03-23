@@ -127,8 +127,8 @@ const data = {
       "Flags",
       "Gas",
     ],
-    exercise_5: [""],
-    exercise_6: [""],
+    exercise5: [""],
+    exercise6: [""],
   },
   toprow: {
     exercise1: ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "[", "]"],
@@ -942,12 +942,12 @@ const data = {
     exercise6: [""],
   },
   allrow: {
-    exercise1: [],
-    exercise2: [],
-    exercise3: [],
-    exercise4: [],
-    exercise5: [],
-    exercise6: [],
+    exercise1: [""],
+    exercise2: [''],
+    exercise3: [''],
+    exercise4: [''],
+    exercise5: [''],
+    exercise6: [''],
   },
 };
 
