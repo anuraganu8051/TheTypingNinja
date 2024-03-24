@@ -80,7 +80,7 @@ const Keyboard = () => {
       "Enter",
     ],
     ["Shift", "Z", "X", "C", "V", "B", "N", "M", ", <", ". >", "/ ?", "Shift"],
-    ["Control", "Win", "Alt", "Space", "Alt", "Win", "Control"],
+    ["Control", "Win", "Alt", " Space ", "Alt", "Win", "Control"],
   ];
 
   const lowercaseAlphabetKeys = [
@@ -118,9 +118,9 @@ const Keyboard = () => {
               <button
                 key={item + index}
                 className={
-                  item.indexOf(activeItem?.replace(" ", "")) !== -1 &&
+                  item.replace(" ","").indexOf(activeItem) !== -1 &&
                   (item.length === activeItem?.length ||
-                    item.replace(" ", "").length === 2)
+                    item.replace(" ", "").length === 2 ||  activeItem === " ")
                     ? item + " active"
                     : item
                 }
