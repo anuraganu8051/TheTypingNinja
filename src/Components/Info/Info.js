@@ -1,5 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlay, faCirclePause } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCirclePlay,
+  faCirclePause,
+  faArrowsRotate,
+} from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 
 import "./Info.css";
@@ -63,6 +67,15 @@ const Info = () => {
         Time Left: {minutes < 10 ? "0" + minutes : minutes}:
         {seconds < 10 ? "0" + seconds : seconds}
       </p>
+      <div
+        onClick={() => {
+          setCounter(300);
+          setIsRunning(false);
+          setPlay(true);
+        }}
+      >
+        <FontAwesomeIcon icon={faArrowsRotate} className="clock_reset_icon" />
+      </div>
     </div>
   );
 };

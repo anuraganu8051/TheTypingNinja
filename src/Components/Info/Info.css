@@ -6,15 +6,18 @@
   display: inline-block;
 }
 
-.info_container .play_icon {
+.info_container .play_icon,
+/* .info_container .clock_reset_icon, */
+.info_container .pause_icon {
   margin-left: -250px;
   padding: 1px;
   font-size: 38px;
   display: inline-block;
 }
 
-.info_container .pause_icon {
-  margin-left: -250px;
+.info_container .clock_reset_icon {
+  /* color: red; */
+  margin-right: -250px;
   padding: 1px;
   font-size: 38px;
   display: inline-block;

@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import data from "../../../utils/data";
 import "./Exercise.css";
 
 const Exercise = (props) => {
-  const [activeItem, setActiveItem] = useState(null);
+  const [activeItem, setActiveItem] = useState(1);
 
   const exercises = [
     `${props.chapter}`,
@@ -17,9 +17,19 @@ const Exercise = (props) => {
     "Exercise - 6",
   ];
 
-  const handleClick = (index) => {
+  const handleClick = (value, index) => {
+    const chapter = exercises[0].toLowerCase().replace(/\s/g, "");
+    const exercise = value.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+    props.exercise(data[chapter][exercise]);
+    props.keyboard(true);
     setActiveItem(index);
   };
+  useEffect(() => {
+    if (activeItem === 1) {
+      handleClick("Exercise - 1", activeItem);
+    }
+  });
 
   return (
     <div className="sidebar_exercise_container">
@@ -48,18 +58,7 @@ const Exercise = (props) => {
               item.indexOf("Exercise") === -1
                 ? () => {}
                 : () => {
-                    const chapter = props.chapter
-                      .toLowerCase()
-                      .replace(/\s/g, "");
-                    const exercise = item
-                      .toLowerCase()
-                      .replace(/[^a-z0-9]/g, "");
-
-                    console.log("Exercise... => ", chapter, exercise);
-                    props.exercise(data[chapter][exercise]);
-                    props.keyboard(true);
-                    handleClick(index);
-                    //   props.showExeciseSideBar(false);
+                    handleClick(item, index);
                   }
             }
           >
