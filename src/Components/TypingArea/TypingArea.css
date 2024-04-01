@@ -19,6 +19,20 @@
   border-radius: 5px;
   border: 2px solid rgb(8, 86, 112);
 }
+
+.typingArea_container h2{
+  padding: 14px;
+  margin-top: -20px;
+  min-width: 70px;
+  display: inline-block;
+  /* height: 45px; */
+  /* width: 60px; */
+  font-size: 15px;
+  background-color: #3c0753;
+  color: #fff;
+  border-radius: 5px;
+  border: 2px solid rgb(8, 86, 112);
+}
 /* .typingArea_container button.Space {
   width: 90px; 
 } */

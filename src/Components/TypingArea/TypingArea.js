@@ -9,6 +9,7 @@ const TypingArea = (props) => {
   const [data, setData] = useState(props.data);
   const [disabledBtton, setDisabledButton] = useState(0);
   const [sampleText, setSampleText] = useState(TextGenerator(data));
+  const [typpedText, setTyppedText] = useState("");
 
   if (data !== props.data) {
     setData(props.data);
@@ -19,21 +20,47 @@ const TypingArea = (props) => {
   }, [data]); // Add props.data to the dependency array
 
   useEffect(() => {
+    const sampleTextCopy = [...sampleText].flat();
     let totalText = sampleText.flat();
+
     if (totalText[0].length > 1) {
       totalText = totalText.map((item) => {
         return item.split("");
       });
       totalText = totalText.flat();
     }
+    let sampleTextCopyLength = totalText.length;
     setDisabledButton(0);
 
     const handleKeyDown = (event) => {
+      console.log(
+        "sample text copy AND LENGTH = >",
+        sampleTextCopy,
+        sampleTextCopyLength
+      );
+
       if (totalText[0] === event.key) {
         totalText.shift();
-        setDisabledButton(
-          sampleText[0].length * sampleText.length - totalText.length
+        if (sampleText.flat().length === 20) {
+          setDisabledButton(
+            sampleText[0].length * sampleText.length - totalText.length
+          );
+        }
+        console.log(
+          "LOGGING LENGTH => ",
+          totalText.length,
+          sampleTextCopyLength - sampleTextCopy[0].length
         );
+        if (
+          totalText.length ===
+          sampleTextCopyLength - sampleTextCopy[0].length
+        ) {
+          sampleTextCopy.shift();
+          sampleTextCopyLength = totalText.length;
+          setDisabledButton(
+            sampleText[0].length * sampleText.length - sampleTextCopy.length
+          );
+        }
       } else if (event.key === " " && totalText[0] === "Space") {
         totalText.shift();
         setDisabledButton(
@@ -44,7 +71,6 @@ const TypingArea = (props) => {
       if (totalText.length === 0) {
         const generatedText = TextGenerator(data);
         setDisabledButton(0);
-
         setSampleText(generatedText);
         totalText = generatedText.flat();
       }
@@ -80,6 +106,7 @@ const TypingArea = (props) => {
           })}
         </div>
       ))}
+      {typpedText.length > 0 && <h2>{typpedText}</h2>}
     </div>
   );
 };
