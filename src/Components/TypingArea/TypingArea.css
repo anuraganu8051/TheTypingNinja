@@ -10,6 +10,7 @@
 .typingArea_container button {
   padding: 14px;
   margin: 1px;
+  min-width: 70px;
   /* height: 45px; */
   /* width: 60px; */
   font-size: 15px;
@@ -26,6 +27,7 @@
 .typingArea_container .row-1 {
   display: inline-block;
   margin: 30px;
+  width: 40%;
   /* border: 2px solid red; */
 }
 
@@ -33,6 +35,7 @@
 .typingArea_container .row-3 {
   display: inline-block;
   margin: 30px;
+  width: 40%;
   /* border: 2px solid greenyellow; */
 }
 
