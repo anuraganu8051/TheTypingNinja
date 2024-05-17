@@ -18,9 +18,9 @@ const Keyboard = () => {
   const handleKeyDown = (index) => {
     if (!keyDownFlag) {
       keyDownFlag = false;
-      console.log("index key board =>", index);
+      // console.log("index key board =>", index);
       setActiveItem(index);
-      console.log("activeItem =>", activeItem);
+      // console.log("activeItem =>", activeItem);
       // setTimeout(function () {
       //   keyDownFlag = false;
       // }, 500);
@@ -118,9 +118,10 @@ const Keyboard = () => {
               <button
                 key={item + index}
                 className={
-                  item.replace(" ","").indexOf(activeItem) !== -1 &&
+                  item.replace(" ", "").indexOf(activeItem) !== -1 &&
                   (item.length === activeItem?.length ||
-                    item.replace(" ", "").length === 2 ||  activeItem === " ")
+                    item.replace(" ", "").length === 2 ||
+                    activeItem === " ")
                     ? item + " active"
                     : item
                 }

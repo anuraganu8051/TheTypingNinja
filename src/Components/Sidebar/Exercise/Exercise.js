@@ -21,7 +21,16 @@ const Exercise = (props) => {
     const chapter = exercises[0].toLowerCase().replace(/\s/g, "");
     const exercise = value.toLowerCase().replace(/[^a-z0-9]/g, "");
 
-    props.exercise(data[chapter][exercise]);
+    if (chapter === "sentencepractice") {
+      const randomIndex = Math.floor(
+        Math.random() * data[chapter][exercise].length
+      );
+      console.log("practice for sentance...", randomIndex);
+      props.exercise(data[chapter][exercise][randomIndex]);
+    } else {
+      props.exercise(data[chapter][exercise]);
+    }
+
     props.keyboard(true);
     setActiveItem(index);
   };

@@ -19,7 +19,7 @@ const Sidebar = (props) => {
     "Bottom Row",
     "Home Top and Bottom Row",
     "Number Row",
-    "All Row",
+    "Sentence Practice",
   ];
 
   return showExercise ? (

@@ -941,13 +941,16 @@ const data = {
     exercise5: [""],
     exercise6: [""],
   },
-  allrow: {
-    exercise1: [""],
-    exercise2: [''],
-    exercise3: [''],
-    exercise4: [''],
-    exercise5: [''],
-    exercise6: [''],
+  sentencepractice: {
+    exercise1: [
+      "Amidst the dense foliage, a shy deer cautiously emerged, its graceful movements barely audible over the soft rustle of leaves. Sunlight filtered through the canopy above, casting dappled shadows on the forest floor. Nearby, a babbling stream flowed gently, its soothing melody harmonizing with the chirping of hidden birds. In this tranquil haven, time seemed to stand still, enveloping everything in a serene embrace. A sense of peace descended upon the woodland, as if nature itself had paused to savor the beauty of the moment",
+      "As dusk fell upon the serene landscape, a gentle breeze swept through the tall grass, carrying with it the sweet scent of jasmine. In the fading light, shadows danced across the ground, casting a mesmerizing display of shapes and patterns. The distant chirping of crickets harmonized with the soft rustling of leaves, creating a symphony of nature's music. Frogs croaked in the nearby pond, adding to the tranquil ambiance. Amidst this symphony, a lone heron gracefully soared across the sky",
+    ],
+    exercise2: [""],
+    exercise3: [""],
+    exercise4: [""],
+    exercise5: [""],
+    exercise6: [""],
   },
 };
 

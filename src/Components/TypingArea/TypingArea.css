@@ -7,6 +7,13 @@
   background-color: aqua;
   border: 3px solid #000;
 }
+.typingArea_container s {
+  text-decoration: none;
+}
+.typingArea_container s.disabled {
+  text-decoration: none;
+  color: green;
+}
 .typingArea_container button {
   padding: 14px;
   margin: 1px;
@@ -20,7 +27,7 @@
   border: 2px solid rgb(8, 86, 112);
 }
 
-.typingArea_container h2{
+.typingArea_container h2 {
   padding: 14px;
   margin-top: -20px;
   min-width: 70px;

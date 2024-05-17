@@ -22,7 +22,7 @@ function App() {
     setExerciseData(data);
   };
 
-  console.log("App => ", exerciseData);
+  // console.log("App => ", exerciseData);
 
   return (
     <div className="App">
